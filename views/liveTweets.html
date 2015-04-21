@@ -1,0 +1,57 @@
+ <!--<div class = "link"><a href = "/stop">Stop</a></div>-->
+ <h1>BRACE YOURSELF AND GET READY!! TWEETS COMING UP!!!!!!!!!</h1>
+ <script src="/socket.io/socket.io.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+  <script>
+    window.onbeforeunload = function() {
+  return "Tweets will be duplicated if you refresh/leave the page!!!";
+};
+
+        var socket = io.connect('http://localhost:8080');
+
+        socket.on('stream', function(tweet)
+        {
+           
+        $('.tweetdiv').prepend("<div class = 'tweetbox'><img src='"+tweet.user.profile_image_url+"' alt='Twiiter image' height='70' width='80'/>"+"<a href='http://www.twitter.com/" + tweet.user.screen_name + "' target='_blank'>" + tweet.user.screen_name+ "</a> " + tweet.text+'<br></div>');
+      });
+  </script>
+  <div class="tweetdiv"></div>
+
+  <style>
+    .tweetdiv
+    {
+      display: block;
+      background-color: white;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .tweetdiv .tweetbox
+    {
+      display: block;
+      border-style: solid;
+      border-width: 5px;
+      margin-right: 3px;
+      margin-left: 3px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      transition-property: background-color;
+      transition-duration: 0.25s;
+
+    }
+    .tweetdiv .tweetbox:hover
+    {
+      background-color: #8ad459;
+    }
+    .tweetdiv .tweetbox a
+    {
+      color : #176A6D;
+      text-decoration: none;
+      transition-property: color;
+      transition-duration: 0.5s;
+      
+    }
+    .tweetdiv .tweetbox a:hover
+    {
+      color : white;
+    }
+  </style>
