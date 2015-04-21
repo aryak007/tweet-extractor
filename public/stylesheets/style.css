@@ -1,0 +1,101 @@
+.front-heading{
+	position: relative;
+	padding-bottom:30px;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	font-family: inherit;
+}
+
+.branding{
+	position: absolute;
+	padding-left: 5px;
+	margin-top: 40px;
+	font-size: 25px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: white;
+	
+}
+.full-width{
+	width:100%;
+}
+.logo{
+	width:80px;
+	margin-top:15px;
+	float:left;
+}
+.description-container{
+
+	margin-top: 120px;
+	color: white;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.description-heading{
+	color: white;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.screen-content{
+	position: absolute;
+	width: 100%;
+}
+.screen{
+	overflow:hidden;
+	width:100%;
+	position:relative;
+	height:100%;
+}
+.screen-container{
+	background:url(../img/iphone_template.png) no-repeat;
+	height:642px;
+	width:311px;
+	padding: 79px 20px 91px 23px;
+}
+.border-bottom-section{
+margin-top: 30px;
+	padding-top: 40px;
+padding-bottom: 40px;
+background-color: #ecf0f1;
+}
+
+.border-text{
+height: auto;
+margin: 0;
+padding: 0;
+border: 0;
+background: transparent;
+line-height: 60px;
+font-size: 50px;
+font-weight: normal;
+color: #bdc3c7;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 600;
+
+}
+body{
+	background-image:url(../img/stock.jpg);
+	background-size: cover;
+	font-family: font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: white;
+	margin: 0px;
+	padding: 0px;
+}
+@media (max-width: 767px){
+body {
+
+	padding-left: : 0px;
+	padding-right: : : 0px;
+	}
+.phone{
+	padding-left: 25%;
+}
+}
+@media (max-width: 500px){
+.phone{
+	padding-left: 12%;
+}
+
+}
