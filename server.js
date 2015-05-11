@@ -35,10 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Twitter details
 var T = new Twit({
-    consumer_key:         ''
-  , consumer_secret:      ''
-  , access_token:         ''
-  , access_token_secret:  ''
+    consumer_key:         'wt6J7qeS259efs0s57NDXM6Cb'
+  , consumer_secret:      'yfmAUG8bu1ZsgN5FsKK47GF3uDbyrVuQmSw8XV8pnv78DahINl'
+  , access_token:         '1896793015-h4WyM5gAt3kr63At0esUsEiTDLltgdcGPwvyIjl'
+  , access_token_secret:  'XnTtSNZlFxoMFxtcQdEHaNIKqEtScveGyHJaek6NjOMcL'
 });
 
 
@@ -70,6 +70,25 @@ io.sockets.on('connection', function (socket) {
 });
 
 
+
+
+
+var twitterCelebList = [];
+var options = {};
+app.get('/celebTweets/:celebSceenName',function(req,res)
+{
+    var screenName = req.param('celebSceenName');
+    twitterCelebList.push(screenName);
+    options = { screen_name: twitterCelebList ,count: 20 };
+    res.redirect('/getCelebTweets');
+});
+app.get('/getCelebTweets',function(req,res)
+{
+    T.get('statuses/user_timeline', options , function(err, data) {
+      res.render('celebTweets',{ tweets:data });
+  });
+});
+
 app.get('/',function(req,res)
 {
   res.render('homePage-sports');
@@ -88,6 +107,10 @@ app.get('/world',function(req,res)
 app.get('/technology',function(req,res)
 {
   res.render('homePage-technology');
+});
+app.get('/celebs',function(req,res)
+{
+  res.render('homePage-celebrities');
 });
 
 
