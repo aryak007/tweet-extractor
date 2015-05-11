@@ -1,21 +1,14 @@
  <!--<div class = "link"><a href = "/stop">Stop</a></div>-->
- <h1>BRACE YOURSELF AND GET READY!!</h1>
- <h2>TWEETS COMING UP!!!!!!!!!</h2>
- <script src="/socket.io/socket.io.js"></script>
+ <h1>BRACE YOURSELF!!</h1>
+ <h2>TWEETS FROM YOUR FAVOURITE CELEB ARE COMING UP. PLEASE WAIT!!!!!!!!!</h2>
+ <!--<script src="/socket.io/socket.io.js"></script>-->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
   <script>
     window.onbeforeunload = function() {
   return "Tweets will be duplicated if you refresh/leave the page!!!";
 };
-
-        var socket = io.connect('http://localhost:8080');
-
-        socket.on('stream', function(tweet)
-        {
-           
-        $('.tweetdiv').prepend("<div class = 'tweetbox'><img src='"+tweet.user.profile_image_url+"' alt='Twiiter image' height='70' width='80'/>"+"<a href='http://www.twitter.com/" + tweet.user.screen_name + "' target='_blank'>" + tweet.user.screen_name+ "</a> " + tweet.text+'<br></div>');
-      });
-  </script>
+</script>
+        
 
  <div id="squaresWaveG">
 <div id="squaresWaveG_1" class="squaresWaveG">
@@ -36,12 +29,24 @@
 </div>
 </div>
 
+{% for i,tweet in tweets %}
+        {% set url = "http://www.twitter.com/"+tweet.user.screen_name %}
+        <div class = 'tweetdiv'>
+
+        <div class = "tweetbox"><img src={{tweet.user.profile_image_url}} alt='Twiiter image' height='70' width='80'/>
+
+        <a href={{url}} target='_blank'>{{tweet.user.screen_name}}</a>
+
+         {{tweet.text }}<br>
+
+        </div>
+      </div>
+        {% endfor %}
 
 
 
 
-
-  <div class="tweetdiv"></div>
+  
   <div class="bubblingG">
       <span id="bubblingG_1">
       </span>
@@ -50,6 +55,7 @@
       <span id="bubblingG_3">
       </span>
   </div>
+
 
 
   <style>
