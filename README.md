@@ -8,7 +8,7 @@
 
 ## 3. Run **node server.js**
 
-** Please feel free to contact or report for bugs at aryak.sengupta@gmail.com**
+Contact - aryak.sengupta@gmail.com 
 
 
 
