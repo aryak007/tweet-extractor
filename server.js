@@ -35,10 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Twitter details
 var T = new Twit({
-    consumer_key:         'wt6J7qeS259efs0s57NDXM6Cb'
-  , consumer_secret:      'yfmAUG8bu1ZsgN5FsKK47GF3uDbyrVuQmSw8XV8pnv78DahINl'
-  , access_token:         '1896793015-h4WyM5gAt3kr63At0esUsEiTDLltgdcGPwvyIjl'
-  , access_token_secret:  'XnTtSNZlFxoMFxtcQdEHaNIKqEtScveGyHJaek6NjOMcL'
+    consumer_key:         ''
+  , consumer_secret:      ''
+  , access_token:         ''
+  , access_token_secret:  ''
 });
 
 
