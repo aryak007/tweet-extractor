@@ -4,9 +4,9 @@
 
 ## 1. Install NodeJS
 
-## 2. Run **npm install** to install dependancies
+## 2. Run **'npm install'** to install dependancies
 
-## 3. Run **node server.js**
+## 3. Run **'node server.js'**
 
 Contact - aryak.sengupta@gmail.com 
 
